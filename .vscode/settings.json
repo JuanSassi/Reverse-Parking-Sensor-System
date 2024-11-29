@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "header.h": "c",
+        "lpc17xx_gpdma.h": "c",
+        "lpc17xx_systick.h": "c",
+        "lpc17xx_gpio.h": "c",
+        "config_adc.h": "c",
+        "config_dac_adc_dac.h": "c",
+        "lpc17xx_timer.h": "c",
+        "config_dac.h": "c",
+        "lpc17xx_libcfg_default.h": "c",
+        "config_port_and_eint.h": "c",
+        "moduleuart.h": "c",
+        "lpc17xx_uart.h": "c"
+    }
+}

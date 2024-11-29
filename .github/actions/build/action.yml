@@ -1,0 +1,16 @@
+name: "ARM build"
+description: "Compile the project"
+
+inputs:
+  path:
+    required: true
+    description: "Build project"
+    default: .
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Run clang-format"
+      shell: bash
+      run: |
+        make -C ${{ inputs.path }} all
