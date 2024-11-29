@@ -51,22 +51,6 @@
 extern volatile uint32_t adc_read_value;
 
 /**
- * @brief Pointer to a volatile 8-bit unsigned data buffer.
- *
- * This pointer may be used for accessing or transferring data
- * in memory-mapped peripherals or other volatile contexts.
- */
-volatile uint8_t* data;
-
-/**
- * @brief Character buffer for storing up to 100 characters.
- *
- * Declared as volatile to handle asynchronous modifications,
- * such as updates in an interrupt routine.
- */
-volatile char buffer[100];
-
-/**
  * @brief Configure the UART.
  *
  * Initialize the UART with default settings.
@@ -117,9 +101,6 @@ uint32_t send_system_status(void);
  * @brief Declaring array of function pointers for DMA transfer.
  *
  */
-uint32_t (*table_uart[4])(void) = {(uint32_t(*)(void))send_adc_value, // Conversion to proper pointer
-                                   send_status_leds,
-                                   notify_interruption_status,
-                                   send_system_status};
+extern uint32_t table_uart[];
 
 #endif // MODULEUART_H
