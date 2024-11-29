@@ -110,7 +110,7 @@ void red_led(void)
             GPIO_SetValue(PINSEL_PORT_0, RED_LED_PIN);
         }
         red_led_counter = MAX_RED_LED_COUNTER;
-        actualizar_dac(dac_value);
+        update_dac();
         toggle--;
     }
 

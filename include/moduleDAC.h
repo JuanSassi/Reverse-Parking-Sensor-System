@@ -65,8 +65,7 @@ void configure_dma_for_dac(volatile uint32_t* table);
 /**
  * @brief Updates the data to be converted by the DAC.
  *
- * @param dac_value Pointer to the dac values ​​to update.
  */
-void actualizar_dac(volatile uint32_t* dac_value);
+void update_dac(void);
 
 #endif
