@@ -71,7 +71,7 @@ void configure_dac_uart(void)
  */
 uint32_t send_adc_value(void)
 {
-    sprintf(buffer, "ADC: %u\n", adc_read_value); // Formatear el mensaje
+    sprintf(buffer, "ADC: %lu\n", adc_read_value);
     return UART_Send(LPC_UART0, buffer, strlen((const char*)buffer), BLOCKING);
 }
 
