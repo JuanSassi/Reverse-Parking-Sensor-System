@@ -1,5 +1,8 @@
 #include "moduleADC.h"
 
+/// Last value read from ADC.
+volatile uint32_t adc_read_value = 0;
+
 /**
  * @brief Set the timer and its match.
  *

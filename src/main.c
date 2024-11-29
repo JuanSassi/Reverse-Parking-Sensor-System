@@ -26,11 +26,6 @@
 #include "moduleSystick.h"
 #include "moduleUART.h"
 
-/// Tabla de valores iniciales para el procesamiento de datos.
-volatile uint32_t table[NUM_SAMPLES] = {1000, 700, 400, 0};
-/// Último valor leído del ADC.
-volatile uint32_t adc_read_value = 0;
-
 /**
  * @brief Main function of the system.
  * Configure the peripherals and enter an infinite loop using DMA and low power.
@@ -53,10 +48,11 @@ int main(void)
     NVIC_EnableIRQ(EINT0_IRQn);     /*!< Enable interrupt EINT0 */
 
     configure_dac();                           /*!< Set up the DAC */
-    configure_dma_for_dac(table);              /*!< Configure the DMA for continuous wave output */
+    configure_dma_for_dac(dac_value);              /*!< Configure the DMA for continuous wave output */
     GPDMA_ChannelCmd(CHANNEL_DMA_DAC, ENABLE); /*!< Enable the DMA channel for the DAC */
 
     conf_UART(); /*!< Configure UART communication over DMA */
+    configure_dac_uart(); /*!< Configure DMA for UART */
 
     NVIC_SetPriority(EINT0_IRQn, 0);   /*!< Set priority for interrupt EINT0 */
     NVIC_SetPriority(TIMER0_IRQn, 1);  /*!< Set priority for Timer0 interrupt */

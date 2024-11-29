@@ -10,6 +10,7 @@
         "config_dac.h": "c",
         "lpc17xx_libcfg_default.h": "c",
         "config_port_and_eint.h": "c",
-        "moduleuart.h": "c"
+        "moduleuart.h": "c",
+        "lpc17xx_uart.h": "c"
     }
 }
