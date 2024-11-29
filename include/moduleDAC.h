@@ -1,14 +1,17 @@
-#ifdef __USE_CMSIS
-#include "LPC17xx.h"
-#endif
-
-#ifdef __USE_MCUEXPRESSO
-#include <cr_section_macros.h> /**< Macros específicos de la herramienta MCUXpresso */
-#endif
-
-#include <stddef.h>
-#include <stdint.h>
-
+/****************************************************************************
+ * Project: Reverse Parking Sensor System
+ * File:    moduleDAC.h
+ * Author:  Juan Ignacio Sassi
+ * Date:    29/11/2024
+ * Description:
+ *    This project implements a proximity sensor to assist when reversing a car. The system is developed 
+ *    on the LPC1769 (Rev C) board and uses multiple modules and peripherals to ensure efficient control 
+ *    and monitoring, providing real-time interaction with the user.
+ *
+ * This file is part of a project developed for the course Digital Electronics III at FCEFYN, 
+ * National University of Córdoba (UNC). 
+ * All rights reserved.
+ ****************************************************************************/
 #ifndef MODULE_DAC_H
 #define MODULE_DAC_H
 
