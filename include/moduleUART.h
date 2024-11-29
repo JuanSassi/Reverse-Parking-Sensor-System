@@ -64,7 +64,7 @@ volatile uint8_t* data;
  * Declared as volatile to handle asynchronous modifications,
  * such as updates in an interrupt routine.
  */
-volatile char* buffer[100];
+volatile char buffer[100];
 
 /**
  * @brief Configure the UART.
