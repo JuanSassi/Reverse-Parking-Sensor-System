@@ -71,9 +71,8 @@ void configure_dac_uart(void)
  */
 uint32_t send_adc_value(void)
 {
-    char buffer1[100];
-    sprintf(buffer1, "ADC: %lu\n", adc_read_value);
-    memcpy(buffer, buffer1, sizeof(buffer1));
+    char buffer[100];
+    sprintf(buffer, "ADC: %lu\n", adc_read_value);
     return UART_Send(LPC_UART0, (uint8_t*)buffer, strlen((const char*)buffer), BLOCKING);
 }
 
@@ -85,6 +84,7 @@ uint32_t send_adc_value(void)
  */
 uint32_t send_status_leds(void)
 {
+    char buffer[100];
     sprintf(buffer, "Reverse mode: %s\n", reverse_flag ? "Enable" : "Disabled");
     return UART_Send(LPC_UART0, buffer, strlen((const char*)buffer), BLOCKING);
 }
@@ -97,6 +97,7 @@ uint32_t send_status_leds(void)
  */
 uint32_t notify_interruption_status(void)
 {
+    char buffer[100];
     sprintf(buffer, "Switch: %s\n", habilitar ? "Enable" : "Disabled");
     return UART_Send(LPC_UART0, buffer, strlen(buffer), BLOCKING);
 }
@@ -109,6 +110,7 @@ uint32_t notify_interruption_status(void)
  */
 uint32_t send_system_status(void)
 {
+    char buffer[100];
     sprintf(buffer, "System: %s\n", reverse_flag ? "Reverse" : "Moving forward");
     return UART_Send(LPC_UART0, buffer, strlen(buffer), BLOCKING);
 }
