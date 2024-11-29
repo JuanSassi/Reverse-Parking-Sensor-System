@@ -7,7 +7,7 @@ volatile uint32_t dac_value2[NUM_SAMPLES] = {800, 800, 800, 800};
 /**
  * @brief Set the DAC.
  *
- * Configures the DAC to operate in counter mode with DMA enabled, using a calculated interval to 
+ * Configures the DAC to operate in counter mode with DMA enabled, using a calculated interval to
  * generate a desired frequency signal.
  */
 void configure_dac(void)
@@ -32,7 +32,7 @@ void configure_dac(void)
 /**
  * @brief Set the DMA to transfer data to the DAC.
  *
- * Configures the DMA to perform continuous transfers from a data table over the DAC channel, 
+ * Configures the DMA to perform continuous transfers from a data table over the DAC channel,
  * using a linked list structure for continuous transfer.
  *
  */

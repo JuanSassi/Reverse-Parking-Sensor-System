@@ -14,7 +14,7 @@
  * @file moduleSystick.h
  * @brief Header file for the configuration and management of SysTick.
  *
- * This module provides functionality to configure and manage the SysTick timer to perform periodic 
+ * This module provides functionality to configure and manage the SysTick timer to perform periodic
  * tasks such as changing the state of the LEDs.
  */
 

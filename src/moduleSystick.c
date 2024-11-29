@@ -16,9 +16,9 @@ volatile uint8_t reverse_flag = 1;                           ///< Reverse mode f
 /**
  * @brief Set the SysTick timer.
  *
- * Sets the SysTick timer to generate an interrupt at a fixed interval defined by `SYSTICK_TIME`. 
+ * Sets the SysTick timer to generate an interrupt at a fixed interval defined by `SYSTICK_TIME`.
  * Enable the timer and its interruptions.
- * 
+ *
  */
 void configure_systick(void)
 {

@@ -26,8 +26,8 @@
 
 /**
  * @brief Configure the ports necessary for system operation.
- * This function initializes the pins used in the project, setting the address of each pin (input or output) 
- * and configuring specific functions according to the needs of the system, such as LEDs, sensors, and UART 
+ * This function initializes the pins used in the project, setting the address of each pin (input or output)
+ * and configuring specific functions according to the needs of the system, such as LEDs, sensors, and UART
  * communication.
  *
  * @param None

@@ -13,7 +13,8 @@ volatile uint8_t habilitar = 1; ///< Indicates whether the system is enabled (1)
 /**
  * @brief Configure external interrupt EINT0.
  *
- * This function initializes the external interrupt EINT0, configuring it to trigger on the falling edge or when active on low.
+ * This function initializes the external interrupt EINT0, configuring it to trigger on the falling edge or when active
+ * on low.
  */
 void configure_external_interrupt(void)
 {

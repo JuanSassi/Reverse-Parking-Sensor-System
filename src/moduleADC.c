@@ -3,9 +3,9 @@
 /**
  * @brief Set the timer and its match.
  *
- * This function initializes the TIMER0 timer with a 100 µs prescaler and sets the match register 
+ * This function initializes the TIMER0 timer with a 100 µs prescaler and sets the match register
  * to generate an interrupt every 60 seconds.
- * 
+ *
  */
 void configure_timer_and_match(void)
 {
@@ -56,7 +56,7 @@ void configure_adc(void)
 /**
  * @brief Interrupt handler for TIMER0.
  *
- * This function is executed when an interrupt occurs at TIMER0. 
+ * This function is executed when an interrupt occurs at TIMER0.
  * Clears the interrupt flag and begins a conversion in the ADC.
  */
 void TIMER0_IRQHandler(void)
@@ -68,21 +68,21 @@ void TIMER0_IRQHandler(void)
 /**
  * @brief Interrupt handler for the ADC.
  *
- * This function is executed when a conversion is completed in the ADC. 
+ * This function is executed when a conversion is completed in the ADC.
  * Reads the conversion value and calls the @ref continue_reverse function.
  */
 void ADC_IRQHandler(void)
 {
-    NVIC_DisableIRQ(ADC_IRQn);                                      /**< Temporarily disables ADC interrupt. */
-    adc_read_value = ADC_ChannelGetData(LPC_ADC, ADC_CHANNEL_0);    /**< Read the ADC conversion value. */
-    continue_reverse();                                             /**< Control the reverse flag depending on the adc value */
-    NVIC_EnableIRQ(ADC_IRQn);                                       /**< Enable ADC interrupt again. */
+    NVIC_DisableIRQ(ADC_IRQn);                                   /**< Temporarily disables ADC interrupt. */
+    adc_read_value = ADC_ChannelGetData(LPC_ADC, ADC_CHANNEL_0); /**< Read the ADC conversion value. */
+    continue_reverse();       /**< Control the reverse flag depending on the adc value */
+    NVIC_EnableIRQ(ADC_IRQn); /**< Enable ADC interrupt again. */
 }
 
 /**
  * @brief Control the reverse flag depending on the adc value.
  *
- * This function evaluates the value of `adc_read_value` and adjusts 
+ * This function evaluates the value of `adc_read_value` and adjusts
  * `reverse_flag` based on whether it meets the allowed limits.
  */
 void continue_reverse(void)

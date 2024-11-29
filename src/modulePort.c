@@ -3,10 +3,10 @@
 /**
  * @file modulePort.c
  * @brief Implementation of GPIO pin and port configuration.
- * This file contains the logic to initialize and configure the system's GPIO pins and ports. 
- * The functionality of the pins is configured for various peripherals such as external interrupts, 
+ * This file contains the logic to initialize and configure the system's GPIO pins and ports.
+ * The functionality of the pins is configured for various peripherals such as external interrupts,
  * LEDs, UART, ADC and DAC.
- * 
+ *
  */
 
 /**
@@ -18,10 +18,10 @@
  * - UART (TX y RX)
  * - ADC (Analog to Digital Conversion Input)
  * - DAC (Digital to Analog Conversion Output)
- * 
- * Configure the pins with the corresponding functions, as well as resistance modes (pull-up, pull-down, etc.) 
+ *
+ * Configure the pins with the corresponding functions, as well as resistance modes (pull-up, pull-down, etc.)
  * and input/output addresses.
- * 
+ *
  */
 void configure_port(void)
 {
@@ -35,16 +35,16 @@ void configure_port(void)
     PINSEL_ConfigPin(&pin_cfg);                /**< Set the pin based on the provided settings */
 
     // Pin configuration for LEDs (green and red)
-    pin_cfg.Portnum = PINSEL_PORT_0;                    /**< Port where the pin is configured */
-    pin_cfg.Pinnum = PINSEL_PIN_4;                      /**< Green LED pin */
-    pin_cfg.Funcnum = PINSEL_FUNC_0;                    /**< GPIO function */
-    pin_cfg.Pinmode = PINSEL_PINMODE_PULLDOWN;          /**< Pull-down resistance */
-    pin_cfg.OpenDrain = PINSEL_PINMODE_NORMAL;          /**< Normal mode */
-    PINSEL_ConfigPin(&pin_cfg);                         /**< Set the configuration for green LED pin */
-    pin_cfg.Pinnum = PINSEL_PIN_5;                      /**< Red LED pin */
-    PINSEL_ConfigPin(&pin_cfg);                         /**< Set the configuration for red LED pin */
-    GPIO_SetDir(PINSEL_PORT_0, GREEN_LED_PIN, OUTPUT);  /**< Set the green LED pin as output */
-    GPIO_SetDir(PINSEL_PORT_0, RED_LED_PIN, OUTPUT);    /**< Set the red LED pin as output */
+    pin_cfg.Portnum = PINSEL_PORT_0;                   /**< Port where the pin is configured */
+    pin_cfg.Pinnum = PINSEL_PIN_4;                     /**< Green LED pin */
+    pin_cfg.Funcnum = PINSEL_FUNC_0;                   /**< GPIO function */
+    pin_cfg.Pinmode = PINSEL_PINMODE_PULLDOWN;         /**< Pull-down resistance */
+    pin_cfg.OpenDrain = PINSEL_PINMODE_NORMAL;         /**< Normal mode */
+    PINSEL_ConfigPin(&pin_cfg);                        /**< Set the configuration for green LED pin */
+    pin_cfg.Pinnum = PINSEL_PIN_5;                     /**< Red LED pin */
+    PINSEL_ConfigPin(&pin_cfg);                        /**< Set the configuration for red LED pin */
+    GPIO_SetDir(PINSEL_PORT_0, GREEN_LED_PIN, OUTPUT); /**< Set the green LED pin as output */
+    GPIO_SetDir(PINSEL_PORT_0, RED_LED_PIN, OUTPUT);   /**< Set the red LED pin as output */
 
     // UART0 TX pin configuration (P0.2)
     pin_cfg.Pinnum = PINSEL_PIN_2;             /**< UART TX pin */
@@ -59,9 +59,9 @@ void configure_port(void)
     PINSEL_ConfigPin(&pin_cfg);      /**< Set the configuration for UART RX */
 
     // ADC pin configuration (P0.23)
-    pin_cfg.Pinnum = PINSEL_PIN_23;            /**< ADC pin */
-    pin_cfg.Funcnum = PINSEL_FUNC_1;           /**< ADC function */
-    PINSEL_ConfigPin(&pin_cfg);                /**< Set the configuration for ADC */
+    pin_cfg.Pinnum = PINSEL_PIN_23;  /**< ADC pin */
+    pin_cfg.Funcnum = PINSEL_FUNC_1; /**< ADC function */
+    PINSEL_ConfigPin(&pin_cfg);      /**< Set the configuration for ADC */
 
     // DAC pin configuration (P0.26)
     pin_cfg.Pinnum = PINSEL_PIN_26;  /**< DAC pin */

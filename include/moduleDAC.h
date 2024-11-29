@@ -55,7 +55,7 @@ void configure_dac(void);
 /**
  * @brief Set the DMA to transfer data to the DAC.
  *
- * Configures the DMA to perform continuous transfers from a data table 
+ * Configures the DMA to perform continuous transfers from a data table
  * containing wave samples to the DAC register.
  *
  * @param table Pointer to the wave sample table.
