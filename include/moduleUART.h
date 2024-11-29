@@ -104,7 +104,10 @@ uint32_t notify_interruption_status(void);
  */
 uint32_t send_system_status(void);
 
-/* Declaring array of function pointers */
+/**
+ * @brief Declaring array of function pointers for DMA transfer.
+ *
+ */
 uint32_t (*table_uart[4])(void) = {(uint32_t(*)(void))send_adc_value, // Conversion to proper pointer
                                    send_status_leds,
                                    notify_interruption_status,
