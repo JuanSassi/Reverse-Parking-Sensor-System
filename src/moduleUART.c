@@ -86,7 +86,7 @@ uint32_t send_status_leds(void)
 {
     char buffer[100];
     sprintf(buffer, "Reverse mode: %s\n", reverse_flag ? "Enable" : "Disabled");
-    return UART_Send(LPC_UART0, buffer, strlen((const char*)buffer), BLOCKING);
+    return UART_Send(LPC_UART0, (uint8_t*)buffer, strlen((const char*)buffer), BLOCKING);
 }
 
 /**
@@ -99,7 +99,7 @@ uint32_t notify_interruption_status(void)
 {
     char buffer[100];
     sprintf(buffer, "Switch: %s\n", habilitar ? "Enable" : "Disabled");
-    return UART_Send(LPC_UART0, buffer, strlen(buffer), BLOCKING);
+    return UART_Send(LPC_UART0, (uint8_t*)buffer, strlen(buffer), BLOCKING);
 }
 
 /**
@@ -112,5 +112,5 @@ uint32_t send_system_status(void)
 {
     char buffer[100];
     sprintf(buffer, "System: %s\n", reverse_flag ? "Reverse" : "Moving forward");
-    return UART_Send(LPC_UART0, buffer, strlen(buffer), BLOCKING);
+    return UART_Send(LPC_UART0, (uint8_t*)buffer, strlen(buffer), BLOCKING);
 }
