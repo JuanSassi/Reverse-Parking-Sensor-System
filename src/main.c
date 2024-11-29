@@ -48,10 +48,10 @@ int main(void)
     NVIC_EnableIRQ(EINT0_IRQn);     /*!< Enable interrupt EINT0 */
 
     configure_dac();                           /*!< Set up the DAC */
-    configure_dma_for_dac(dac_value);              /*!< Configure the DMA for continuous wave output */
+    configure_dma_for_dac(dac_value);          /*!< Configure the DMA for continuous wave output */
     GPDMA_ChannelCmd(CHANNEL_DMA_DAC, ENABLE); /*!< Enable the DMA channel for the DAC */
 
-    conf_UART(); /*!< Configure UART communication over DMA */
+    conf_UART();          /*!< Configure UART communication over DMA */
     configure_dac_uart(); /*!< Configure DMA for UART */
 
     NVIC_SetPriority(EINT0_IRQn, 0);   /*!< Set priority for interrupt EINT0 */
