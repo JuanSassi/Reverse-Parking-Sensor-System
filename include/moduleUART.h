@@ -74,6 +74,15 @@ volatile char buffer[100];
 void conf_UART(void);
 
 /**
+ * @brief Configures the DAC and UART for data transfer using DMA.
+ *
+ * This function initializes the DMA and sets up a linked list item (LLI)
+ * for continuous data transfer from a memory table to the UART transmit register.
+ * The DMA channel is configured for memory-to-peripheral transfer.
+ */
+void configure_dac_uart(void);
+
+/**
  * @brief Sends the ADC value via UART.
  *
  * @return Buffer with the information to be transmitted.

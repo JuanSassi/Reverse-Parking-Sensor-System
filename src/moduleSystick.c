@@ -75,7 +75,7 @@ void green_led(void)
             GPIO_SetValue(PINSEL_PORT_0, GREEN_LED_PIN);
         }
         green_led_counter = MAX_GREEN_LED_COUNTER;
-        actualizar_dac(dac_value[1]);
+        update_dac();
         toggle--;
     }
 
