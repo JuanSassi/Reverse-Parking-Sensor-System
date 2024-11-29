@@ -77,9 +77,16 @@ void update_dac(void)
 {
     if (reverse_flag == TRUE)
     {
-        dac_value = dac_value1;
-    } else
+        for (int i = 0; i < NUM_SAMPLES; i++)
+        {
+            dac_value[i] = dac_value1[i];
+        }
+    }
+    else
     {
-        dac_value = dac_value2;
+        for (int i = 0; i < NUM_SAMPLES; i++)
+        {
+            dac_value[i] = dac_value2[i];
+        }
     }
 }
