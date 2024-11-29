@@ -101,6 +101,6 @@ uint32_t send_system_status(void);
  * @brief Declaring array of function pointers for DMA transfer.
  *
  */
-extern uint32_t table_uart[];
+extern volatile uint32_t table_uart[4];
 
 #endif // MODULEUART_H
