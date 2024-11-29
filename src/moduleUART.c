@@ -1,11 +1,9 @@
 #include "moduleUART.h"
 
-volatile uint32_t (*table_uart[4])(void) = {
-    (uint32_t (*)(void))send_adc_value,   // Conversion to proper pointer
-    send_status_leds,
-    notify_interruption_status,
-    send_system_status
-};
+volatile uint32_t (*table_uart[4])(void) = {(uint32_t(*)(void))send_adc_value, // Conversion to proper pointer
+                                            send_status_leds,
+                                            notify_interruption_status,
+                                            send_system_status};
 
 /**
  * @brief Configure the UART.
